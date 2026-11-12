@@ -16,8 +16,8 @@ COPY --chown=root:root --chmod=755 entrypoint.sh /usr/local/bin/entrypoint.sh
 
 # 允许Agent使用sudo
 # 保持仓库中的uid 1000用户名统一
-RUN usermod --login user --move-home --home /home/user node && \
-    groupmod --new-name user node && \
+RUN usermod --login user --move-home --home /home/user ubuntu && \
+    groupmod --new-name user ubuntu && \
     usermod -aG sudo user && \
     echo "user:password" | chpasswd
 
